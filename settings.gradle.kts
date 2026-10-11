@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SnapGrab"
+rootProject.name = "BlinkCatch"
 include(":app")

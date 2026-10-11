@@ -1,4 +1,4 @@
-package com.snapgrab.app.ui.components
+package com.blinkcatch.app.ui.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -23,9 +23,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.snapgrab.app.model.FormatPresets
-import com.snapgrab.app.model.VideoFormatItem
-import com.snapgrab.app.model.VideoMetadata
+import com.blinkcatch.app.model.FormatPresets
+import com.blinkcatch.app.model.VideoFormatItem
+import com.blinkcatch.app.model.VideoMetadata
 
 @Composable
 fun QuickDownloadSheet(

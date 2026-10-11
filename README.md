@@ -1,6 +1,6 @@
-# ⚡ SnapGrab - 1-Tap Video Downloader for Android
+# ⚡ BlinkCatch - 1-Tap Video Downloader for Android
 
-SnapGrab is an Android application that enables seamless, 1-tap video downloading from **YouTube, Instagram Reels, X (Twitter), TikTok, Facebook**, and more, directly via the native Android Share Sheet without switching away from your current app.
+**BlinkCatch** is an ultra-fast Android application that enables seamless, 1-tap video downloading from **YouTube, Instagram Reels, X (Twitter), TikTok, Facebook**, and more, directly via the native Android Share Sheet without switching away from your current app.
 
 ---
 
@@ -8,7 +8,7 @@ SnapGrab is an Android application that enables seamless, 1-tap video downloadin
 
 1. **System Share Sheet Integration (`ACTION_SEND`)**:
    - Tap "Share" on any video in YouTube, Instagram, or Twitter.
-   - Select **SnapGrab**.
+   - Select **BlinkCatch**.
    - A lightweight, transparent **BottomSheet overlay** appears directly over the video player.
 
 2. **Format / Resolution Selector**:
@@ -30,18 +30,17 @@ SnapGrab is an Android application that enables seamless, 1-tap video downloadin
 
 ## 🚀 How to Build the APK using GitHub Actions (Zero Local Setup)
 
-1. Initialize git and push this folder to your GitHub account:
+1. Push this repository to your GitHub account:
    ```bash
-   cd SnapGrab
-   git init
+   cd BlinkCatch
    git add .
-   git commit -m "Initial SnapGrab Android project"
+   git commit -m "feat: rename to BlinkCatch"
    git branch -M main
-   git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>.git
+   git remote add origin https://github.com/<YOUR_USERNAME>/BlinkCatch.git
    git push -u origin main
    ```
 
 2. Go to your GitHub repository -> Click on the **Actions** tab.
-3. The **"Build SnapGrab APK"** workflow will run automatically.
-4. Once completed (~2-3 minutes), scroll to **Artifacts** and download **`SnapGrab-Debug-APK`**.
+3. The **"Build BlinkCatch APK"** workflow will run automatically.
+4. Once completed (~2-3 minutes), scroll down to **Artifacts** and download **`BlinkCatch-Debug-APK`**.
 5. Transfer and install the `.apk` on your Android phone!

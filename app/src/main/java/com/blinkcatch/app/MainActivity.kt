@@ -1,4 +1,4 @@
-package com.snapgrab.app
+package com.blinkcatch.app
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -31,12 +31,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
-import com.snapgrab.app.model.FormatPresets
-import com.snapgrab.app.service.DownloadService
-import com.snapgrab.app.ui.theme.AccentGradientEnd
-import com.snapgrab.app.ui.theme.AccentGradientStart
-import com.snapgrab.app.ui.theme.SnapGrabTheme
-import com.snapgrab.app.utils.UrlExtractor
+import com.blinkcatch.app.model.FormatPresets
+import com.blinkcatch.app.service.DownloadService
+import com.blinkcatch.app.ui.theme.AccentGradientEnd
+import com.blinkcatch.app.ui.theme.AccentGradientStart
+import com.blinkcatch.app.ui.theme.BlinkCatchTheme
+import com.blinkcatch.app.utils.UrlExtractor
 import com.yausername.youtubedl_android.YoutubeDL
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            SnapGrabTheme {
+            BlinkCatchTheme {
                 MainScreen()
             }
         }
@@ -83,7 +83,7 @@ class MainActivity : ComponentActivity() {
                 TopAppBar(
                     title = {
                         Text(
-                            text = "SnapGrab",
+                            text = "BlinkCatch",
                             fontWeight = FontWeight.Bold,
                             fontSize = 22.sp
                         )
@@ -239,7 +239,7 @@ class MainActivity : ComponentActivity() {
                             Text(
                                 text = "1. Open YouTube, Instagram, or Twitter.\n" +
                                         "2. Tap the Share button on any video/reel.\n" +
-                                        "3. Select 'SnapGrab' from the share sheet.\n" +
+                                        "3. Select 'BlinkCatch' from the share sheet.\n" +
                                         "4. Choose format from the popup and download starts instantly!",
                                 style = MaterialTheme.typography.bodyMedium,
                                 lineHeight = 22.sp,

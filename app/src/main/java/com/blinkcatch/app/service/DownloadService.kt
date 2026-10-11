@@ -1,4 +1,4 @@
-package com.snapgrab.app.service
+package com.blinkcatch.app.service
 
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -11,9 +11,9 @@ import android.os.Environment
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.snapgrab.app.MainActivity
-import com.snapgrab.app.R
-import com.snapgrab.app.SnapGrabApp
+import com.blinkcatch.app.MainActivity
+import com.blinkcatch.app.R
+import com.blinkcatch.app.BlinkCatchApp
 import com.yausername.youtubedl_android.YoutubeDL
 import com.yausername.youtubedl_android.YoutubeDLRequest
 import kotlinx.coroutines.CoroutineScope
@@ -79,7 +79,7 @@ class DownloadService : Service() {
     private fun downloadVideo(url: String, format: String, title: String) {
         val downloadFolder = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-            "SnapGrab"
+            "BlinkCatch"
         )
         if (!downloadFolder.exists()) {
             downloadFolder.mkdirs()
@@ -135,7 +135,7 @@ class DownloadService : Service() {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-        val completedNotification = NotificationCompat.Builder(this, SnapGrabApp.CHANNEL_ID)
+        val completedNotification = NotificationCompat.Builder(this, BlinkCatchApp.CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_download)
             .setContentTitle("Download Complete")
             .setContentText(title)
@@ -148,7 +148,7 @@ class DownloadService : Service() {
     }
 
     private fun handleDownloadError(title: String, errorMsg: String) {
-        val errorNotification = NotificationCompat.Builder(this, SnapGrabApp.CHANNEL_ID)
+        val errorNotification = NotificationCompat.Builder(this, BlinkCatchApp.CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_download)
             .setContentTitle("Download Failed: $title")
             .setContentText(errorMsg)
@@ -172,7 +172,7 @@ class DownloadService : Service() {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-        return NotificationCompat.Builder(this, SnapGrabApp.CHANNEL_ID)
+        return NotificationCompat.Builder(this, BlinkCatchApp.CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_download)
             .setContentTitle(title)
             .setContentText(statusText)

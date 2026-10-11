@@ -1,4 +1,4 @@
-package com.snapgrab.app
+package com.blinkcatch.app
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import androidx.lifecycle.lifecycleScope
-import com.snapgrab.app.model.VideoMetadata
-import com.snapgrab.app.service.DownloadService
-import com.snapgrab.app.ui.components.QuickDownloadSheet
-import com.snapgrab.app.ui.theme.SnapGrabTheme
-import com.snapgrab.app.utils.UrlExtractor
+import com.blinkcatch.app.model.VideoMetadata
+import com.blinkcatch.app.service.DownloadService
+import com.blinkcatch.app.ui.components.QuickDownloadSheet
+import com.blinkcatch.app.ui.theme.BlinkCatchTheme
+import com.blinkcatch.app.utils.UrlExtractor
 import com.yausername.youtubedl_android.YoutubeDL
 import com.yausername.youtubedl_android.YoutubeDLRequest
 import kotlinx.coroutines.Dispatchers
@@ -35,7 +35,7 @@ class ShareActivity : ComponentActivity() {
         val platform = UrlExtractor.getPlatformName(targetUrl)
 
         setContent {
-            SnapGrabTheme {
+            BlinkCatchTheme {
                 var isLoading by remember { mutableStateOf(true) }
                 var metadata by remember { mutableStateOf<VideoMetadata?>(null) }
                 var errorMessage by remember { mutableStateOf<String?>(null) }

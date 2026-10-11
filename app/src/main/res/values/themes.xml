@@ -1,10 +1,10 @@
 <resources>
-    <style name="Theme.SnapGrab" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.BlinkCatch" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">#1E1E24</item>
     </style>
 
     <!-- Translucent Overlay Theme for Share Intent Popup -->
-    <style name="Theme.SnapGrab.TransparentOverlay" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.BlinkCatch.TransparentOverlay" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>

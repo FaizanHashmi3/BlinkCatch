@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.snapgrab.app"
+    namespace = "com.blinkcatch.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.snapgrab.app"
+        applicationId = "com.blinkcatch.app"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

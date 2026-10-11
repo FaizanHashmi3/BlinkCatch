@@ -1,4 +1,4 @@
-package com.snapgrab.app.model
+package com.blinkcatch.app.model
 
 data class VideoFormatItem(
     val id: String,

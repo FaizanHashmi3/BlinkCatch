@@ -1,4 +1,4 @@
-package com.snapgrab.app.utils
+package com.blinkcatch.app.utils
 
 import java.util.regex.Pattern
 

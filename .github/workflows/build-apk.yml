@@ -1,4 +1,4 @@
-name: Build SnapGrab APK
+name: Build BlinkCatch APK
 
 on:
   push:
@@ -32,6 +32,6 @@ jobs:
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SnapGrab-Debug-APK
+          name: BlinkCatch-Debug-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error

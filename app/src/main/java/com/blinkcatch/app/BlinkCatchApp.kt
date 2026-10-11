@@ -1,4 +1,4 @@
-package com.snapgrab.app
+package com.blinkcatch.app
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -12,11 +12,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SnapGrabApp : Application() {
+class BlinkCatchApp : Application() {
 
     companion object {
-        const val CHANNEL_ID = "snapgrab_downloads"
-        private const val TAG = "SnapGrabApp"
+        const val CHANNEL_ID = "blinkcatch_downloads"
+        private const val TAG = "BlinkCatchApp"
     }
 
     override fun onCreate() {

@@ -1,4 +1,4 @@
-package com.snapgrab.app.ui.theme
+package com.blinkcatch.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
