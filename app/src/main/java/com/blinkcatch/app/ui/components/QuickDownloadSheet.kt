@@ -100,7 +100,7 @@ fun QuickDownloadSheet(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 32.dp),
-                        horizontalAlignment = Alignment.CenterVertically
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         CircularProgressIndicator(strokeWidth = 3.dp)
                         Spacer(modifier = Modifier.height(16.dp))
@@ -115,7 +115,7 @@ fun QuickDownloadSheet(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 20.dp),
-                        horizontalAlignment = Alignment.CenterVertically
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
                             text = errorMessage,

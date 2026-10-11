@@ -29,7 +29,6 @@
         android:roundIcon="@drawable/ic_download"
         android:supportsRtl="true"
         android:theme="@style/Theme.BlinkCatch"
-        android:extractNativeLibs="true"
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
 
