@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 class BlinkCatchApp : Application() {
 
     companion object {
-        const val CHANNEL_ID = "blinkcatch_downloads"
+        const val CHANNEL_ID = "blinkcatch_downloads_v2"
         private const val TAG = "BlinkCatchApp"
     }
 
@@ -39,10 +39,11 @@ class BlinkCatchApp : Application() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = getString(R.string.channel_download_name)
             val descriptionText = getString(R.string.channel_download_desc)
-            val importance = NotificationManager.IMPORTANCE_LOW
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
                 description = descriptionText
-                setShowBadge(false)
+                setShowBadge(true)
+                enableVibration(false)
             }
             val notificationManager: NotificationManager =
                 getSystemService(NotificationManager::class.java)

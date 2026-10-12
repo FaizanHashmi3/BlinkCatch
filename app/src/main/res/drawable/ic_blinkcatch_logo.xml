@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Rounded Background Glow -->
+    <path
+        android:fillColor="#1E1B4B"
+        android:pathData="M24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,12.95 35.05,4 24,4 Z" />
+
+    <!-- Cyan Glow Ring -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M24,6 C14.06,6 6,14.06 6,24 C6,33.94 14.06,42 24,42 C33.94,42 42,33.94 42,24 C42,14.06 33.94,6 24,6 Z"
+        android:fillAlpha="0.15" />
+
+    <!-- Lightning Bolt Back -->
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M25,11 L15,24 L22,24 L19,37 L32,22 L24,22 Z" />
+
+    <!-- Electric Cyan Lightning Front -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M24,10 L14,23 L22,23 L18,36 L31,21 L23,21 Z" />
+
+    <!-- Base Tray Bar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,38 L32,38 C32.6,38 33,38.4 33,39 C33,39.6 32.6,40 32,40 L16,40 C15.4,40 15,39.6 15,39 C15,38.4 15.4,38 16,38 Z" />
+</vector>

@@ -1,12 +1,17 @@
 package com.blinkcatch.app
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.*
-import androidx.lifecycle.lifecycleScope
+import androidx.core.content.ContextCompat
 import com.blinkcatch.app.model.VideoMetadata
 import com.blinkcatch.app.service.DownloadService
 import com.blinkcatch.app.ui.components.QuickDownloadSheet
@@ -15,7 +20,6 @@ import com.blinkcatch.app.utils.UrlExtractor
 import com.yausername.youtubedl_android.YoutubeDL
 import com.yausername.youtubedl_android.YoutubeDLRequest
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ShareActivity : ComponentActivity() {
@@ -40,15 +44,32 @@ class ShareActivity : ComponentActivity() {
                 var metadata by remember { mutableStateOf<VideoMetadata?>(null) }
                 var errorMessage by remember { mutableStateOf<String?>(null) }
 
+                // Check notification permission for Android 13+
+                val permissionLauncher = rememberLauncherForActivityResult(
+                    contract = ActivityResultContracts.RequestPermission()
+                ) { /* proceed */ }
+
+                LaunchedEffect(Unit) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                        if (ContextCompat.checkSelfPermission(this@ShareActivity, Manifest.permission.POST_NOTIFICATIONS)
+                            != PackageManager.PERMISSION_GRANTED) {
+                            permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                        }
+                    }
+                }
+
                 LaunchedEffect(targetUrl) {
                     try {
                         val fetchedMeta = withContext(Dispatchers.IO) {
-                            val request = YoutubeDLRequest(targetUrl)
+                            val request = YoutubeDLRequest(targetUrl).apply {
+                                addOption("--no-playlist")
+                                addOption("--no-check-certificates")
+                            }
                             val info = YoutubeDL.getInstance().getInfo(request)
                             VideoMetadata(
                                 title = info.title ?: "Online Video",
                                 uploader = info.uploader ?: platform,
-                                durationText = "${info.duration}s",
+                                durationText = if (info.duration > 0) "${info.duration}s" else "",
                                 thumbnailUrl = info.thumbnail,
                                 webUrl = targetUrl
                             )
@@ -57,7 +78,7 @@ class ShareActivity : ComponentActivity() {
                         isLoading = false
                     } catch (e: Exception) {
                         isLoading = false
-                        errorMessage = "Could not fetch stream preview. Tap below to download directly."
+                        errorMessage = "Could not fetch preview. Tap below to download directly."
                     }
                 }
 
@@ -69,16 +90,18 @@ class ShareActivity : ComponentActivity() {
                     errorMessage = errorMessage,
                     onDismiss = { finish() },
                     onDownloadSelected = { selectedFormat ->
-                        val videoTitle = metadata?.title ?: "Video ($platform)"
+                        val mediaTitle = metadata?.title ?: "Media ($platform)"
                         DownloadService.startDownload(
                             context = this@ShareActivity,
                             url = targetUrl,
                             formatSpec = selectedFormat.formatSpec,
-                            title = videoTitle
+                            title = mediaTitle,
+                            isAudio = selectedFormat.isAudioOnly
                         )
+                        val typeText = if (selectedFormat.isAudioOnly) "audio" else "video"
                         Toast.makeText(
                             this@ShareActivity,
-                            "Download started: $videoTitle",
+                            "Downloading $typeText in background...",
                             Toast.LENGTH_SHORT
                         ).show()
                         finish()
