@@ -2,7 +2,7 @@
 
 **FaizIt** is a high-performance, privacy-first Android application that enables instant, 1-tap video and audio extraction from **YouTube, Instagram Reels, X (Twitter), TikTok, Facebook**, and web video sources directly via Android's native Share Sheet without switching apps.
 
-Built and architected by **Faizan Hashmi** ([@FaizanHashmi3](https://github.com/FaizanHashmi3) • `mdfaizanhashmi3@gmail.com`).
+Built and architected by **Faizan Hashmi** ([@FaizanHashmi3](https://github.com/FaizanHashmi3) • [LinkedIn](https://www.linkedin.com/in/faizan-hashmi03) • `mdfaizanhashmi3@gmail.com`).
 
 ---
 
@@ -32,7 +32,7 @@ Built and architected by **Faizan Hashmi** ([@FaizanHashmi3](https://github.com/
 
 ## 🚀 How to Build the APK using GitHub Actions
 
-1. Push this repository to GitHub under `FaizanHashmi3/FaizIt`:
+1. Push this repository to GitHub under `FaizanHashmi3/BlinkCatch`:
    ```bash
    git add .
    git commit -m "feat: FaizIt release"
@@ -41,12 +41,13 @@ Built and architected by **Faizan Hashmi** ([@FaizanHashmi3](https://github.com/
 
 2. Go to your GitHub repository -> Click on the **Actions** tab.
 3. The **"Build FaizIt APK"** workflow runs automatically.
-4. Once completed, download **`FaizIt-arm64-APK`** from Artifacts and install it on your device!
+4. Once completed, download **`FaizIt-arm64-APK`** from Artifacts (or [Releases](https://github.com/FaizanHashmi3/BlinkCatch/releases)) and install it on your device!
 
 ---
 
 ## 🌐 Official Marketing Website
 The official marketing website and live simulator is located in `/docs` (or `/website`) and ready for GitHub Pages hosting.
 - **Creator**: Faizan Hashmi
+- **LinkedIn**: [faizan-hashmi03](https://www.linkedin.com/in/faizan-hashmi03)
 - **GitHub**: [FaizanHashmi3](https://github.com/FaizanHashmi3)
 - **Contact**: `mdfaizanhashmi3@gmail.com`
