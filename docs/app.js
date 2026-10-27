@@ -38,36 +38,32 @@ function initMobileMenu() {
   const navLinks = document.querySelector('.nav-links');
   if (!toggleBtn || !navLinks) return;
 
-  toggleBtn.addEventListener('click', () => {
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
     toggleBtn.setAttribute('aria-expanded', !isExpanded);
-    
-    if (!isExpanded) {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '100%';
-      navLinks.style.left = '0';
-      navLinks.style.right = '0';
-      navLinks.style.background = 'rgba(8, 10, 15, 0.98)';
-      navLinks.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-      navLinks.style.padding = '24px';
-      navLinks.style.gap = '20px';
-      toggleBtn.textContent = '✕ CLOSE';
-    } else {
-      navLinks.style.display = '';
-      toggleBtn.textContent = '☰ MENU';
-    }
+    navLinks.classList.toggle('active');
+    toggleBtn.textContent = !isExpanded ? '✕ CLOSE' : '☰ MENU';
   });
 
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 768) {
-        navLinks.style.display = '';
+        navLinks.classList.remove('active');
         toggleBtn.setAttribute('aria-expanded', 'false');
         toggleBtn.textContent = '☰ MENU';
       }
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!toggleBtn.contains(e.target) && !navLinks.contains(e.target)) {
+      if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.textContent = '☰ MENU';
+      }
+    }
   });
 }
 
@@ -505,7 +501,7 @@ function initWebDownloader() {
             </span>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;">
+          <div class="web-result-grid">
             <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
               Target Format: <strong style="color: #FFFFFF;">${selectedQuality.format}</strong><br>
               Resolution / Bitrate: <strong style="color: var(--accent-cyan);">${selectedQuality.label}</strong> • Container: <strong style="color: #FFFFFF;">${ext.toUpperCase()}</strong><br>
@@ -530,7 +526,7 @@ function initWebDownloader() {
           </div>
 
           <!-- App Upsell Banner (Strict Null-Radius Glass) -->
-          <div style="margin-top: 24px; padding: 20px; background: rgba(0, 242, 254, 0.03); border: 1px solid rgba(0, 242, 254, 0.2); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div class="web-result-upsell">
             <div style="max-width: 680px;">
               <div style="font-family: var(--font-display); font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px;">
                 ⚡ Prefer 1-Tap Downloads Directly Inside Apps?
