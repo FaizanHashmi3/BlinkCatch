@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /FaizIt.apk
+Allow: /style.css
+Allow: /app.js
+Allow: /favicon.svg
+
+# Sitemaps
+Sitemap: https://faizanhashmi3.github.io/BlinkCatch/sitemap.xml
