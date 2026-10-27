@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">BlinkCatch</string>
-    <string name="channel_download_name">BlinkCatch Downloads</string>
-    <string name="channel_download_desc">Notifications showing video download progress</string>
-    <string name="action_share_title">BlinkCatch Downloader</string>
+    <string name="app_name">FaizIt</string>
+    <string name="channel_download_name">FaizIt Downloads</string>
+    <string name="channel_download_desc">Notifications showing media download progress</string>
+    <string name="action_share_title">FaizIt Downloader</string>
     <string name="cancel">Cancel</string>
     <string name="download">Download</string>
     <string name="fetching_info">Analyzing video link...</string>
-    <string name="error_invalid_url">No valid video URL detected</string>
-    <string name="error_extract_failed">Failed to fetch video details</string>
+    <string name="error_invalid_url">No valid media URL detected</string>
+    <string name="error_extract_failed">Failed to fetch media details</string>
     <string name="download_started">Download started in background</string>
 </resources>

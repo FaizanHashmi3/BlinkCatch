@@ -4,25 +4,26 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
     
-    <!-- Outer energetic rounded badge / ring -->
+    <!-- Outer sharp geometric aura -->
     <path
-        android:fillColor="#38BDF8"
-        android:pathData="M54,24 C37.43,24 24,37.43 24,54 C24,70.57 37.43,84 54,84 C70.57,84 84,70.57 84,54 C84,37.43 70.57,24 54,24 Z"
-        android:fillAlpha="0.15" />
+        android:fillColor="#00F2FE"
+        android:pathData="M54,18 L88,34 L88,74 L54,90 L20,74 L20,34 Z"
+        android:strokeColor="#00F2FE"
+        android:strokeWidth="2"
+        android:fillAlpha="0.12" />
 
-    <!-- Lightning Bolt (Blink) + Arrow Down (Catch) Hybrid Mark -->
-    <!-- Back accent shadow -->
+    <!-- FaizIt Dual Blade 'F' Glyph (Back Indigo) -->
     <path
         android:fillColor="#6366F1"
-        android:pathData="M57,30 L38,53 L51,53 L45,78 L69,50 L55,50 Z" />
+        android:pathData="M38,30 L74,30 L66,40 L48,40 L48,50 L64,50 L58,60 L48,60 L48,80 L38,80 Z" />
 
-    <!-- Sharp Electric Lightning Bolt Foreground -->
+    <!-- FaizIt Dual Blade 'F' Glyph (Front Electric Cyan) -->
     <path
-        android:fillColor="#38BDF8"
-        android:pathData="M55,28 L37,51 L51,51 L44,76 L68,48 L54,48 Z" />
+        android:fillColor="#00F2FE"
+        android:pathData="M36,28 L72,28 L64,38 L46,38 L46,48 L62,48 L56,58 L46,58 L46,78 L36,78 Z" />
 
-    <!-- Download Tray Arc Indicator at the bottom -->
+    <!-- Kinetic Supersonic Downward Arrowhead (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M40,78 L68,78 C69.1,78 70,78.9 70,80 C70,81.1 69.1,82 68,82 L40,82 C38.9,82 38,81.1 38,80 C38,78.9 38.9,78 40,78 Z" />
+        android:pathData="M60,62 L76,62 L68,72 L80,72 L66,86 L68,76 L56,76 Z" />
 </vector>

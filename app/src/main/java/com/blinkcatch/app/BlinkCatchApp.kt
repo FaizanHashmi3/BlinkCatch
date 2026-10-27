@@ -15,8 +15,8 @@ import kotlinx.coroutines.launch
 class BlinkCatchApp : Application() {
 
     companion object {
-        const val CHANNEL_ID = "blinkcatch_downloads_v2"
-        private const val TAG = "BlinkCatchApp"
+        const val CHANNEL_ID = "faizit_downloads_v1"
+        private const val TAG = "FaizItApp"
     }
 
     override fun onCreate() {

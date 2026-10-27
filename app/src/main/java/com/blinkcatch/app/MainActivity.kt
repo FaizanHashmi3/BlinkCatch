@@ -97,14 +97,14 @@ class MainActivity : ComponentActivity() {
                     title = {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
-                                painter = painterResource(id = R.drawable.ic_blinkcatch_logo),
+                                painter = painterResource(id = R.drawable.ic_faizit_logo),
                                 contentDescription = "Logo",
                                 tint = Color.Unspecified,
                                 modifier = Modifier.size(32.dp)
                             )
                             Spacer(modifier = Modifier.width(10.dp))
                             Text(
-                                text = "BlinkCatch",
+                                text = "FaizIt",
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 22.sp
                             )
@@ -365,7 +365,7 @@ class MainActivity : ComponentActivity() {
                         Text(
                             text = "1. Open YouTube, Instagram, or Twitter.\n" +
                                     "2. Tap 'Share' on any video/reel.\n" +
-                                    "3. Choose 'BlinkCatch' from the share sheet.\n" +
+                                    "3. Choose 'FaizIt' from the share sheet.\n" +
                                     "4. Pick Video or MP3, and it downloads directly in the background!",
                             style = MaterialTheme.typography.bodyMedium,
                             lineHeight = 22.sp,

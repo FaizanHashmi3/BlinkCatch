@@ -1,46 +1,53 @@
-# ⚡ BlinkCatch - 1-Tap Video Downloader for Android
+# ⚡ FaizIt - Ultra-Fast 1-Tap Media Downloader for Android
 
-**BlinkCatch** is an ultra-fast Android application that enables seamless, 1-tap video downloading from **YouTube, Instagram Reels, X (Twitter), TikTok, Facebook**, and more, directly via the native Android Share Sheet without switching away from your current app.
+**FaizIt** is a high-performance, privacy-first Android application that enables instant, 1-tap video and audio extraction from **YouTube, Instagram Reels, X (Twitter), TikTok, Facebook**, and web video sources directly via Android's native Share Sheet without switching apps.
+
+Built and architected by **Faizan Hashmi** ([@FaizanHashmi3](https://github.com/FaizanHashmi3) • [LinkedIn](https://www.linkedin.com/in/faizan-hashmi03) • `mdfaizanhashmi3@gmail.com`).
 
 ---
 
 ## 🌟 Key Features
 
-1. **System Share Sheet Integration (`ACTION_SEND`)**:
-   - Tap "Share" on any video in YouTube, Instagram, or Twitter.
-   - Select **BlinkCatch**.
-   - A lightweight, transparent **BottomSheet overlay** appears directly over the video player.
+1. **Native Share Sheet Integration (`ACTION_SEND`)**:
+   - Tap "Share" on any video in Instagram, YouTube, X, or TikTok.
+   - Select **FaizIt**.
+   - A lightweight, transparent bottom sheet appears directly over the video player.
 
-2. **Format / Resolution Selector**:
-   - Choose between **1080p Full HD**, **720p HD**, **480p SD**, or **Audio Only (MP3)**.
-   - Shows thumbnail, title, and platform detection.
+2. **Multi-Resolution & Format Extractor**:
+   - Pick between **1080p Full HD**, **720p HD**, **480p SD**, or **Studio MP3 Audio**.
+   - Live thumbnail, creator attribution, and platform recognition.
 
 3. **Background Foreground Download Service**:
-   - Download runs seamlessly in the background with persistent notification progress bar (Speed & ETA).
-   - Once finished, the video is automatically indexed into the user's phone **Gallery / Google Photos / Downloads**.
+   - Runs in the background with persistent notification progress (Speed & ETA).
+   - Once finished, files are indexed into **Gallery / Google Photos / Downloads / FaizIt** via Android `MediaScannerConnection`.
 
-4. **Zero Server Cost (On-Device Extraction Engine)**:
+4. **Zero Server Footprint (On-Device Extraction Engine)**:
    - Uses `youtubedl-android` (modern `yt-dlp` wrapper) with bundled FFmpeg.
-   - Runs directly on the device using residential mobile data/WiFi — zero server hosting costs and no IP bans.
+   - Executes directly on the user's phone via residential mobile IP — zero server hosting costs, zero rate limits, and 100% private.
 
 5. **Over-The-Air Engine Updates**:
-   - In-app refresh button to update `yt-dlp` extraction rules if platforms update their video layouts.
+   - In-app refresh button to update `yt-dlp` extraction rules if platforms update their layouts.
 
 ---
 
-## 🚀 How to Build the APK using GitHub Actions (Zero Local Setup)
+## 🚀 How to Build the APK using GitHub Actions
 
-1. Push this repository to your GitHub account:
+1. Push this repository to GitHub under `FaizanHashmi3/BlinkCatch`:
    ```bash
-   cd BlinkCatch
    git add .
-   git commit -m "feat: rename to BlinkCatch"
-   git branch -M main
-   git remote add origin https://github.com/<YOUR_USERNAME>/BlinkCatch.git
+   git commit -m "feat: FaizIt release"
    git push -u origin main
    ```
 
 2. Go to your GitHub repository -> Click on the **Actions** tab.
-3. The **"Build BlinkCatch APK"** workflow will run automatically.
-4. Once completed (~2-3 minutes), scroll down to **Artifacts** and download **`BlinkCatch-Debug-APK`**.
-5. Transfer and install the `.apk` on your Android phone!
+3. The **"Build FaizIt APK"** workflow runs automatically.
+4. Once completed, download **`FaizIt-arm64-APK`** from Artifacts (or [Releases](https://github.com/FaizanHashmi3/BlinkCatch/releases)) and install it on your device!
+
+---
+
+## 🌐 Official Marketing Website
+The official marketing website and live simulator is located in `/docs` (or `/website`) and ready for GitHub Pages hosting.
+- **Creator**: Faizan Hashmi
+- **LinkedIn**: [faizan-hashmi03](https://www.linkedin.com/in/faizan-hashmi03)
+- **GitHub**: [FaizanHashmi3](https://github.com/FaizanHashmi3)
+- **Contact**: `mdfaizanhashmi3@gmail.com`
