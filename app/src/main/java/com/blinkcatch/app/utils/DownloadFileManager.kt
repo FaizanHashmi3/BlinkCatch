@@ -25,7 +25,7 @@ object DownloadFileManager {
     val downloadFolder: File
         get() = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-            "BlinkCatch"
+            "FaizIt"
         )
 
     fun getDownloadedFiles(): List<DownloadedMediaItem> {

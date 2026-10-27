@@ -90,7 +90,7 @@ class DownloadService : Service() {
     private fun downloadMedia(url: String, format: String, title: String, isAudio: Boolean) {
         val downloadFolder = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-            "BlinkCatch"
+            "FaizIt"
         )
         if (!downloadFolder.exists()) {
             downloadFolder.mkdirs()

@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BlinkCatch"
+rootProject.name = "FaizIt"
 include(":app")

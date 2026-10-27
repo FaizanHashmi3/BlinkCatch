@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Obsidian Hexagonal Precision Shield Background -->
+    <path
+        android:fillColor="#0A0B10"
+        android:pathData="M24,4 L42,12 L42,36 L24,44 L6,36 L6,12 Z" />
+
+    <!-- Sharp Electric Outer Rim -->
+    <path
+        android:fillColor="#00F2FE"
+        android:pathData="M24,5.5 L40.5,13 L40.5,35 L24,42.5 L7.5,35 L7.5,13 Z"
+        android:strokeColor="#00F2FE"
+        android:strokeWidth="1.2"
+        android:fillAlpha="0.08" />
+
+    <!-- FaizIt Dual Blade 'F' Glyph + Downward Velocity Strike -->
+    <!-- Gradient Accent Shadow (Violet/Indigo) -->
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M16,12 L34,12 L30,17 L21,17 L21,22 L29,22 L26,27 L21,27 L21,37 L16,37 Z" />
+
+    <!-- Front Electric Cyan Blade -->
+    <path
+        android:fillColor="#00F2FE"
+        android:pathData="M15,11 L33,11 L29,16 L20,16 L20,21 L28,21 L25,26 L20,26 L20,36 L15,36 Z" />
+
+    <!-- Velocity Capture Arrowhead (Instant Download / Catch) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M27,29 L35,29 L31,34 L37,34 L30,41 L31,36 L25,36 Z" />
+</vector>
