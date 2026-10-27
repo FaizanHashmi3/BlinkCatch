@@ -275,7 +275,7 @@ function initExtractionSandbox() {
     <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">Install FaizIt on your Android phone to extract this media directly via the native Android Share Sheet without copying links.</p>
   </div>
   <div style="margin-top: 16px;">
-    <a href="https://github.com/FaizanHashmi3/BlinkCatch/releases" target="_blank" rel="noopener noreferrer" class="btn-chamfer" style="padding: 12px 18px; font-size: 11px; width: 100%; text-align: center;">DOWNLOAD FAIZIT APK</a>
+    <a href="https://github.com/FaizanHashmi3/BlinkCatch/actions/runs/38210057850" target="_blank" rel="noopener noreferrer" class="btn-chamfer" style="padding: 12px 18px; font-size: 11px; width: 100%; text-align: center;">DOWNLOAD FAIZIT APK (READY NOW)</a>
   </div>
 </div>
       `;
