@@ -271,7 +271,7 @@ function initExtractionSandbox() {
     <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">Install FaizIt on your Android phone to extract this media directly via the native Android Share Sheet without copying links.</p>
   </div>
   <div style="margin-top: 16px;">
-    <a href="FaizIt.apk" download="FaizIt.apk" class="btn-chamfer" style="padding: 12px 18px; font-size: 11px; width: 100%; text-align: center;">DOWNLOAD FAIZIT APK (DIRECT)</a>
+    <a href="https://github.com/FaizanHashmi3/BlinkCatch/releases/download/v1.0.0/app-debug.apk" download="FaizIt.apk" class="btn-chamfer" style="padding: 12px 18px; font-size: 11px; width: 100%; text-align: center;">DOWNLOAD FAIZIT APK (DIRECT)</a>
   </div>
 </div>
       `;
@@ -535,7 +535,7 @@ function initWebDownloader() {
                 Never copy and paste links again. Install the <strong>FaizIt Android App</strong> to download Instagram Reels, YouTube Shorts, and Twitter videos directly from Android's native <strong>Share Sheet</strong> with zero ads and 100% on-device yt-dlp + FFmpeg.
               </div>
             </div>
-            <a href="FaizIt.apk" download="FaizIt.apk" class="btn-chamfer" style="padding: 12px 22px; font-size: 12px; white-space: nowrap;">
+            <a href="https://github.com/FaizanHashmi3/BlinkCatch/releases/download/v1.0.0/app-debug.apk" download="FaizIt.apk" class="btn-chamfer" style="padding: 12px 22px; font-size: 12px; white-space: nowrap;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               GET FAIZIT APK (35MB)
             </a>
