@@ -1,0 +1,21 @@
+[build]
+  publish = "docs"
+
+[[redirects]]
+  from = "/FaizIt.apk"
+  to = "https://github.com/FaizanHashmi3/BlinkCatch/releases/download/v1.0.0/app-debug.apk"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/app-debug.apk"
+  to = "https://github.com/FaizanHashmi3/BlinkCatch/releases/download/v1.0.0/app-debug.apk"
+  status = 302
+  force = true
+
+[[headers]]
+  for = "/*.apk"
+  [headers.values]
+    Content-Type = "application/vnd.android.package-archive"
+    Content-Disposition = "attachment; filename=\"FaizIt.apk\""
+    Cache-Control = "public, max-age=31536000, immutable"
