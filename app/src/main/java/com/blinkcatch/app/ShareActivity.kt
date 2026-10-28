@@ -64,6 +64,9 @@ class ShareActivity : ComponentActivity() {
                             val request = YoutubeDLRequest(targetUrl).apply {
                                 addOption("--no-playlist")
                                 addOption("--no-check-certificates")
+                                addOption("--no-warnings")
+                                addOption("--no-update")
+                                addOption("--add-header", "Accept-Language: en-US,en;q=0.9")
                             }
                             val info = YoutubeDL.getInstance().getInfo(request)
                             VideoMetadata(

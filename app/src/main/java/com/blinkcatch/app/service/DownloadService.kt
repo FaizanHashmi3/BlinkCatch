@@ -87,7 +87,7 @@ class DownloadService : Service() {
         return START_NOT_STICKY
     }
 
-    private fun downloadMedia(url: String, format: String, title: String, isAudio: Boolean) {
+    private fun downloadMedia(url: String, format: String, title: String, isAudio: Boolean, hasRetried: Boolean = false) {
         val downloadFolder = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
             "FaizIt"
@@ -98,6 +98,7 @@ class DownloadService : Service() {
 
         // Capture existing files snapshot to detect newly saved file
         val existingFiles = downloadFolder.listFiles()?.map { it.absolutePath }?.toSet() ?: emptySet()
+        val isInstagram = url.contains("instagram.com", ignoreCase = true) || url.contains("instagr.am", ignoreCase = true)
 
         val request = YoutubeDLRequest(url).apply {
             // Safe filename options: restricts special characters (/ , : * ? " < > |) that crash filesystem
@@ -106,7 +107,14 @@ class DownloadService : Service() {
             addOption("--no-playlist")
             addOption("--no-mtime")
             addOption("--no-check-certificates")
-            addOption("--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+            addOption("--no-warnings")
+            addOption("--no-update")
+            addOption("--add-header", "Accept-Language: en-US,en;q=0.9")
+
+            // Don't force desktop user-agent on Instagram so yt-dlp uses its internal tailored mobile endpoints
+            if (!isInstagram) {
+                addOption("--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+            }
 
             if (isAudio) {
                 // Audio extraction parameters using FFmpeg
@@ -142,14 +150,28 @@ class DownloadService : Service() {
             handleDownloadSuccess(title, targetFile, isAudio)
         } catch (e: Exception) {
             Log.e(TAG, "Download failed: ${e.message}", e)
+            if (!hasRetried) {
+                try {
+                    Log.i(TAG, "Extraction failed, auto-updating YoutubeDL engine and retrying...")
+                    val notif = buildProgressNotification(title, 0, "Updating engine rules...")
+                    notificationManager.notify(PROGRESS_NOTIFICATION_ID, notif.build())
+                    YoutubeDL.getInstance().updateYoutubeDL(applicationContext)
+                    downloadMedia(url, format, title, isAudio, hasRetried = true)
+                    return
+                } catch (updateEx: Exception) {
+                    Log.e(TAG, "Auto-update retry failed: ${updateEx.message}")
+                }
+            }
             handleDownloadError(title, e.message ?: "Failed to extract/download media")
         } finally {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                stopForeground(STOP_FOREGROUND_REMOVE)
-            } else {
-                stopForeground(true)
+            if (!hasRetried) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    stopForeground(STOP_FOREGROUND_REMOVE)
+                } else {
+                    stopForeground(true)
+                }
+                stopSelf()
             }
-            stopSelf()
         }
     }
 

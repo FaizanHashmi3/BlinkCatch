@@ -29,6 +29,14 @@ class BlinkCatchApp : Application() {
                 YoutubeDL.getInstance().init(applicationContext)
                 FFmpeg.getInstance().init(applicationContext)
                 Log.d(TAG, "YoutubeDL & FFmpeg initialized successfully")
+
+                // Auto-update YoutubeDL engine to latest upstream version on background start
+                try {
+                    val updateStatus = YoutubeDL.getInstance().updateYoutubeDL(applicationContext)
+                    Log.d(TAG, "YoutubeDL engine updated: $updateStatus")
+                } catch (updateEx: Exception) {
+                    Log.w(TAG, "YoutubeDL auto-update on start skipped: ${updateEx.message}")
+                }
             } catch (e: YoutubeDLException) {
                 Log.e(TAG, "Failed to initialize YoutubeDL: ${e.message}", e)
             }
